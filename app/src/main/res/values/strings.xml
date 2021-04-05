@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Epfi Login</string>
+
+    <string name="providing_pan_date_of_birth_helps_us_find_and_fetch_your_kyc_from_a_central_registry_by_the_government_of_india_learn_more"><![CDATA[Providing PAN & Date of Birth helps us find and fetch your KYC from a central registry by the Government of India. Learn more]]></string>
+</resources>

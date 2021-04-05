@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/twentyDp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/thirtyDp"
+            android:text="First of the few steps to set \nyou up with a Bank Account"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPanNumberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PAN NUMBER"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            android:layout_marginTop="@dimen/twentyDp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvPanNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tenDp"
+            android:hint="Enter your pan number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPanNumberText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPanNumber"
+                android:maxLength="10"
+                android:textAllCaps="true"
+                android:inputType="textCapCharacters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BIRTHDATE"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPanNumber"
+            android:layout_marginTop="@dimen/twentyDp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvDay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tenDp"
+            android:hint="DD"
+            android:layout_marginEnd="@dimen/twentyDp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBirthDate"
+            app:layout_constraintEnd_toStartOf="@id/tvMonth"
+            app:layout_constraintHorizontal_chainStyle="packed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:maxLength="2"
+                android:focusable="false"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvMonth"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="MM"
+            android:layout_marginEnd="@dimen/twentyDp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay"
+            app:layout_constraintStart_toEndOf="@id/tvDay"
+            app:layout_constraintTop_toTopOf="@id/tvDay"
+            app:layout_constraintEnd_toStartOf="@id/tvYear"
+            app:layout_constraintHorizontal_chainStyle="packed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etmm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLength="2"
+                android:focusable="false"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvYear"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="YYYY"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay"
+            app:layout_constraintStart_toEndOf="@id/tvMonth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDay"
+            app:layout_constraintHorizontal_chainStyle="packed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etyear"
+                android:maxLength="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:focusable="false"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/providing_pan_date_of_birth_helps_us_find_and_fetch_your_kyc_from_a_central_registry_by_the_government_of_india_learn_more"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnNext"
+            android:layout_marginBottom="@dimen/tenDp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:enabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnDonHave"
+            android:layout_marginBottom="@dimen/twentyDp"
+            android:background="@drawable/next_btn_bg"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnDonHave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I don't have a PAN"
+            android:textColor="@color/appColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
